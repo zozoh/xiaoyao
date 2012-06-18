@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Func-0618</title>
+<script language="Javascript" src="func_0618.js"></script>
+<script language="Javascript">
+function doTest(){
+    var ary = [34, "rrr", "love", 555, false, {}];
+    var re = doFunc_0618();
+    if(re == 2)
+        alert("恭喜你，答对了 ^_^ !");
+    else
+        alert("你怎么搞的，又错了!!! >:O");
+}
+</script>
+</head>
+<body>
+<button onclick="doTest()">Do Test</button>
+<h1>函数练习 0618</h1>
+<pre>
+提供一个函数，
+  这个函数可以从一个数组中查找出第一个内容为 "love" 的元素
+  并且返回其下标
+你的函数名必须为 "doFunc_0618"
+</pre>
+</body>
+</html>
