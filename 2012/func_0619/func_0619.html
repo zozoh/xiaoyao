@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Func-0619</title>
+<script language="Javascript" src="func_0619.js"></script>
+<script language="Javascript">
+function doTest(){
+    var str = "haha";
+    var re = doFunc_0619(str, "h");
+    if(re == 2)
+        alert("恭喜你，答对了 ^_^ !");
+    else
+        alert("你怎么搞的，又错了!!! >:O");
+}
+</script>
+</head>
+<body>
+<button onclick="doTest()">Do Test</button>
+<h1>函数练习 0619</h1>
+<pre>
+在一个名为 func_0619.js 里提供提供一个函数:
+    function func_0619(str, sub) {
+        ...
+    }
+    要求：
+     1. 给你的参数 str 表示一个字符串
+     2. 给你的参数 sub 表示另外一个字符串
+     3. 你需要返回一个布尔值
+         3.1 如果 str 以 sub 开头，则返回 true
+         3.2 否则返回 false
+    比如:
+        func_0619("good night", "goo");     # 应该返回 true
+        func_0619("good night", "oo");      # 应该返回 false
+        func_0619("good night", null);      # 应该返回 false
+        func_0619(null, "abc");             # 应该返回 false
+
+</pre>
+</body>
+</html>
