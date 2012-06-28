@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Func-0628</title>
+<link rel="stylesheet" type="text/css" href="../func.css">
+<script language="Javascript" src="func_0628.js"></script>
+<script language="Javascript">
+function doTest(){
+    var str = "haha";
+    var re = doFunc_0628(str, "h");
+    if(re == 2)
+        alert("恭喜你，答对了 ^_^ !");
+    else
+        alert("你怎么搞的，又错了!!! >:O");
+}
+</script>
+</head>
+<body>
+<button onclick="doTest()">Do Test</button>
+<h1>函数练习 0628</h1>
+<pre>
+在一个名为 func_0628.js 里提供提供一个函数:
+    function func_0628(str) {
+        ...
+        return 反转后的字符串 
+    }
+要求：
+ 1. 给你的参数 str 表示一个字符串
+ 2. 你需要返回一个字符串，是给定字符串的反转串
+比如:
+    func_0628("abc");     # 应该返回 "cba"
+    func_0628("x");       # 应该返回 "x"
+    func_0628("");        # 应该返回 ""
+    func_0628(null);      # 应该返回 null
+
+</pre>
+</body>
+</html>
