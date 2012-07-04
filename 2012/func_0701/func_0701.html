@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Func-0701</title>
+<link rel="stylesheet" type="text/css" href="../func.css">
+<script language="Javascript" src="func_0701.js"></script>
+<script language="Javascript">
+function doTest(){
+    var str = document.getElementById("txt").value;
+
+    // 计算正确的值
+    var s = "";
+    if(!str){
+        s = null;
+    }else{
+        for(var i=0;i<str.length;i++){
+            s += '[' + str.charCodeAt(i) + ']';
+        }
+    }
+
+    if(s)
+        s = '"' + s + '"';
+
+    // 测试
+    var re = func_0701(str);
+    if(re == s)
+        alert("恭喜你，答对了 ^_^ !\n" + re);
+    else
+        alert("你怎么搞的，又错了!!! >:O\n你的答案:" + re + "\n应该是:" + s);
+}
+</script>
+</head>
+<body>
+<input size="50" id="txt" value="abc"><button onclick="doTest()">Do Test</button>
+<h1>函数练习 0701 - 改变字符串</h1>
+<pre>
+在一个名为 func_0701.js 里提供提供一个函数:
+    function func_0701(str) {
+        ...
+        return 改变后的字符串 
+    }
+要求：
+ 1. 给你的参数 str 表示一个字符串
+ 2. 你需要对其进行改动，并返回改动后的字符串，改动的要求为：
+    将字符串的每个字符都变成编码数字，并且
+    如果一个字符编码数字大于 128，或者小于 0 ，则变成 "[??]"
+比如:
+    func_0701("abc");     # 应该返回 "[97][98][99]"
+    func_0701("123");     # 应该返回 "[49][50][51]"
+    func_0701("?我");     # 应该返回 "[63][??]"
+    func_0701("明天");    # 应该返回 "[??][??]"
+    func_0701(null);      # 应该返回 null
+
+</pre>
+</body>
+</html>

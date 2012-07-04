@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Func-0705</title>
+<link rel="stylesheet" type="text/css" href="../func.css">
+<script language="Javascript" src="func_0705.js"></script>
+<script language="Javascript">
+function doTest(){
+    var str = document.getElementById("txt").value;
+
+    // 计算正确结果
+    var expect = /[a-zA-Z0-9_-]+@[a-zA-Z0-9_-].+[.][a-zA-Z0-9]+/.test(str);
+
+    // 测试
+    var re = func_0705(str);
+    if(re == expect)
+        alert("恭喜你，答对了 ^_^ !\n" + re);
+    else
+        alert("你怎么搞的，又错了!!! >:O\n你的答案:" + re + "\n应该是:" + expect);
+}
+</script>
+</head>
+<body>
+<input size="50" id="txt" value="abc@263.net"><button onclick="doTest()">Do Test</button>
+<h1>函数练习 0705 - 判断是否是邮箱地址</h1>
+<pre>
+在一个名为 func_0705.js 里提供提供一个函数:
+    function func_0705(str) {
+        ...
+        return 给定字符串是否是一个电子邮箱地址 
+    }
+要求：
+ 1. 给你的参数 str 表示一个字符串
+ 2. 你需要判断其是否是一个合法的电子邮箱地址
+     一个合法的电子邮箱地址格式为  [帐户名]@[域名].[后缀名]
+      * 帐户名只能是 数字，大小写字母，下划线，中划线的组合
+      * 域名只能是  数字，大小写字母，下划线，中划线的组合
+      * 后缀名只能是  数字，大小写字母的组合
+比如:
+    func_0705("abc@263.net");     # 应该返回 true
+    func_0705("a@2.n");           # 应该返回 true
+    func_0705("abc@263");         # 应该返回 false
+    func_0705("小妖@新浪.com");   # 应该返回 false
+    func_0705("abc");             # 应该返回 false
+    func_0705(null);              # 应该返回 false
+
+</pre>
+</body>
+</html>
