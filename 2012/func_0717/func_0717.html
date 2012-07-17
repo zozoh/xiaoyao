@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Func-0717</title>
+<link rel="stylesheet" type="text/css" href="../func.css">
+<script language="Javascript" src="func_0717.js"></script>
+<script language="Javascript">
+function doTest(){
+    var str = document.getElementById("txt").value;
+
+    var objs = eval('('+str+')');
+
+    alert(objs.length);
+
+    // 测试
+    var re = func_0717(str);
+
+    alert(re);
+}
+</script>
+</head>
+<body>
+<textarea cols=140 rows=20 id="txt" style="font-size:14px;font-family:Courier;" value="abc@263.net"></textarea>
+<br><button onclick="doTest()">Do Test</button>
+<h1>函数练习 0717 - 判断数组元素的类型</h1>
+<pre>
+在一个名为 func_0717.js 里提供提供一个函数:
+    function func_0717(objs) {
+        ...
+        return 一个字符串
+    }
+要求：
+ 1. 给你的参数 objs 表示一个数组
+ 2. 你需要根据参数返回一个大的字符串
+ 3. 字符串内容，根据数组元素拼装而成
+    3.1 如果元素是字符串，就将其值用双引号包裹
+    3.2 如果是数字，boolean, null, undefined 则直接打印
+    3.3 如果是对象，则打印所有 key 和 value, 并用逗号分隔
+        对于 value 的打印方式，参考本规则
+    3.4 如果是函数，则调用这个函数，并打印返回值
+        打印的方式，参考本规则
+ 4. 所有的值，用 "\n" 分隔
+比如:
+    #....................................................
+    func_0717([12,true,"a"]);     
+    # 应该返回 
+        12
+        true
+        "a"
+    #....................................................
+    func_0717([null, {x:12,y:15,name:'haha'}, function(){
+        return 'ABC';
+    }];
+    # 应该返回
+        null
+        {x:12, y:15, name:"haha"}
+        "ABC"
+
+</pre>
+</body>
+</html>
